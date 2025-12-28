@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sponsorship Details • NSAR Workshop 2026</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+
+  <!-- AOS animation -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#06122b;
+      --muted:#4b5b7a;
+      --muted2:#6b7a97;
+
+      --stroke: rgba(10, 45, 100, .10);
+      --shadow: 0 18px 45px rgba(10, 45, 100, .12);
+
+      --sky1:#e7f7ff;
+      --sky2:#f7fbff;
+
+      --accent:#38bdf8;
+      --accent2:#60a5fa;
+      --accent3:#9ae6ff;
+
+      --chip: rgba(56,189,248,.10);
+      --chipStroke: rgba(56,189,248,.20);
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 700px at 15% -10%, rgba(56,189,248,.35), transparent 60%),
+        radial-gradient(1000px 650px at 85% 0%, rgba(96,165,250,.25), transparent 60%),
+        linear-gradient(180deg, var(--sky1), var(--sky2));
+      min-height:100vh;
+    }
+
+    /* NAVBAR */
+    .nav-glass{
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .navbar-brand{
+      font-weight: 800;
+      letter-spacing: -.02em;
+      color: var(--ink) !important;
+    }
+    .brand-dot{
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, var(--accent3), var(--accent2));
+      box-shadow: 0 0 0 8px rgba(56,189,248,.14);
+      display:inline-block;
+      margin-right:10px;
+    }
+    .navbar .nav-link{
+      color: rgba(6,18,43,.78) !important;
+      border-radius: 999px;
+      padding: .55rem .85rem !important;
+      transition: all .18s ease;
+      font-weight: 700;
+    }
+    .navbar .nav-link:hover{
+      background: rgba(56,189,248,.10);
+      color: rgba(6,18,43,.95) !important;
+      transform: translateY(-1px);
+    }
+    .navbar .nav-link.active{
+      background: rgba(56,189,248,.12);
+      border: 1px solid rgba(56,189,248,.20);
+      color: rgba(6,18,43,.95) !important;
+    }
+
+    /* PAGE */
+    .page-wrap{ padding-top: 92px; padding-bottom: 56px; }
+    .page-hero{
+      border-radius: 22px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.84);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      position: relative;
+      overflow:hidden;
+    }
+    .page-hero::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(900px 360px at 15% 5%, rgba(154,230,255,.35), transparent 62%),
+        radial-gradient(800px 320px at 95% 0%, rgba(96,165,250,.22), transparent 60%);
+      filter: blur(18px);
+      opacity: .75;
+      pointer-events:none;
+    }
+    .page-hero > *{ position:relative; z-index:1; }
+
+    .kicker{
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      font-size: .90rem;
+      color: var(--muted2);
+      font-weight: 800;
+    }
+    .page-title{
+      font-weight: 950;
+      letter-spacing: -.03em;
+      font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+      margin: .35rem 0 .25rem;
+      background: linear-gradient(90deg, #06204a, #0c4a6e, #075985);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .venue-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-top: 10px;
+      padding: .55rem .90rem;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--chipStroke);
+      color: rgba(6,18,43,.88);
+      font-weight: 800;
+      font-size: .95rem;
+    }
+
+    .glass-card{
+      margin-top: 18px;
+      border-radius: 22px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.90);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .lead-block{
+      border-radius: 18px;
+      border: 1px solid rgba(10,45,100,.08);
+      background: rgba(255,255,255,.95);
+      padding: 18px;
+      
+  font-feature-settings: "kern", "liga";
+  -webkit-font-smoothing: antialiased;
+  font-family: Georgia, "Times New Roman", serif;
+    }
+    .ptext{
+      color: rgba(6,18,43,.80);
+      line-height: 1.85;
+      font-weight: 550;
+      margin: 0;
+    }
+
+    .section-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: .55rem .90rem;
+      border-radius: 999px;
+      background: rgba(56,189,248,.12);
+      border: 1px solid rgba(56,189,248,.22);
+      color: rgba(6,18,43,.92);
+      font-weight: 950;
+    }
+
+   
+
+
+
+
+
+    /* Base sponsorship card: clean + minimal */
+.tier{
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(10,45,100,.10);
+  background: #ffffff; /* very light, no visible gradient by default */
+  padding: 16px;
+  height:100%;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.08);
+  transition:
+    transform .35s ease,
+    box-shadow .45s ease,
+    border-color .45s ease;
+}
+
+/* Soft radial layer, controlled per-card */
+.tier::before{
+  content:"";
+  position:absolute;
+  inset:-18%;
+  border-radius: inherit;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity .45s ease, transform .45s ease;
+  pointer-events:none;
+}
+
+/* Generic hover motion */
+.tier:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 24px 52px rgba(15,23,42,0.20);
+}
+
+/* ------------------------------ */
+/* 🟠 BRONZE  (1st card in row)    */
+/* ------------------------------ */
+.row.g-3.mt-2 > .col-lg-4:nth-child(1) .tier::before:active{
+  /* subtle warm bronze glow, only visible on hover */
+  background: radial-gradient(circle at 25% 0%, rgba(215,130,60,0.18), transparent 65%);
+}
+.row.g-3.mt-2 > .col-lg-4:nth-child(1) .tier{
+  border: 1px solid rgba(215,130,60,0.45);
+    background: linear-gradient(135deg, #ffe4c2, #f2b679);
+
+}
+.row.g-3.mt-2 > .col-lg-4:nth-child(1) .tier::before{
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* ------------------------------ */
+/* ⚪ SILVER (2nd card in row)     */
+/* ------------------------------ */
+.row.g-3.mt-2 > .col-lg-4:nth-child(2) .tier{
+  background: linear-gradient(135deg, #f2f4f7, #cfd3da);
+  border: 1px solid rgba(148,163,184,0.45);
+}
+
+/* ------------------------------ */
+/* ✨ GOLD  (3rd card in row)      */
+/* ------------------------------ */
+.row.g-3.mt-2 > .col-lg-4:nth-child(3) .tier::before{
+  /* light champagne gold glow by default (very subtle) */
+  background: radial-gradient(circle at 25% 0%, rgba(234,179,8,0.17), transparent 65%);
+}
+.row.g-3.mt-2 > .col-lg-4:nth-child(3) .tier{
+  /* bit lighter but richer premium gold */
+  border: 1px solid rgba(202,160,30,0.45);
+    background: linear-gradient(135deg, #ffefc8, #fbf2d4);
+
+}
+.row.g-3.mt-2 > .col-lg-4:nth-child(3) .tier::before{
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
+/* ------------------------------ */
+/* Title chip: soft text glow     */
+/* ------------------------------ */
+.tier-title{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding: .45rem .80rem;
+  border-radius: 999px;
+  background: rgba(154,230,255,.22);
+  border: 1px solid rgba(56,189,248,.22);
+  font-weight: 950;
+  color: rgba(6,18,43,.92);
+  margin-bottom: 12px;
+  transition:
+    text-shadow .35s ease,
+    box-shadow .35s ease,
+    transform .35s ease;
+}
+
+.tier:hover .tier-title{
+  text-shadow: 0 0 8px rgba(255,255,255,0.9);
+  box-shadow: 0 8px 18px rgba(15,23,42,0.18);
+  transform: translateY(-1px);
+}
+
+    .tier:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 14px 26px rgba(10,45,100,.10);
+    }
+    .tier-title{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: .45rem .80rem;
+      border-radius: 999px;
+      background: rgba(154,230,255,.28);
+      border: 1px solid rgba(56,189,248,.22);
+      font-weight: 950;
+      color: rgba(6,18,43,.92);
+      margin-bottom: 12px;
+    }
+    .tier ul{
+      margin: 0;
+      padding-left: 1.05rem;
+      color: rgba(6,18,43,.82);
+      font-weight: 700;
+      line-height: 1.9;
+    }
+
+    
+    .contact-card{
+      border-radius: 18px;
+      border: 1px solid rgba(10,45,100,.08);
+      background: rgba(255,255,255,.95);
+      padding: 16px;
+    }
+    .contact-title{
+      font-weight: 950;
+      color: rgba(6,18,43,.92);
+      margin-bottom: 8px;
+    }
+    .contact-line{
+      color: rgba(6,18,43,.80);
+      font-weight: 550;
+      line-height: 1.7;
+    }
+    .contact-link{
+      color: rgba(6,18,43,.86);
+      font-weight: 700;
+      text-decoration:none;
+    }
+    .contact-link:hover{ text-decoration: underline; }
+
+    footer{
+      border-top: 1px solid var(--stroke);
+      background: rgba(255,255,255,.70);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 18px 0 22px;
+    }
+    .to-top{
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      border: 1px solid rgba(10,45,100,.14);
+      background: rgba(255,255,255,.92);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: rgba(6,18,43,.92);
+      font-weight: 900;
+      transition: transform .18s ease;
+    }
+    .to-top:hover{ transform: translateY(-2px); }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg nav-glass fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="brand-dot"></span> NSAR Workshop 2026
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="local-advisory.html">Local Advisory</a></li>
+          <li class="nav-item"><a class="nav-link" href="call-for-participant.html">Call for Participant</a></li>
+          <li class="nav-item"><a class="nav-link" href="scientific-programme.html">Scientific Programme</a></li>
+          <li class="nav-item"><a class="nav-link" href="programme-details.html">Programe Details</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact Us</a></li>
+
+          <li class="nav-item"><a class="nav-link active" href="sponsorship-details.html">Sponsorship Details</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    <div class="container">
+
+      <!-- Header -->
+      <section class="page-hero" data-aos="fade-up" data-aos-duration="900">
+        <div class="kicker">Opportunity for Sponsorship @ NSUT, New Delhi, India</div>
+        <h1 class="page-title">National Workshop and Outreach Programme (NSAR – 2026)</h1>
+
+        <div class="mt-2" style="font-weight:500; color:rgba(6,18,43,.88);">
+          In collaboration with
+        </div>
+        <div style="font-weight:600; color:rgba(6,18,43,.92); margin-top:2px;">
+          Department of Atomic Energy (DAE) and Board of Research in Nuclear Sciences (BRNS)
+        </div>
+
+        <div class="venue-pill">
+          <i class="fa-solid fa-location-dot"></i>
+          Venue : NSUT (Main Campus), Sector-3 Dwarka, New Delhi-110078
+        </div>
+      </section>
+
+      <section class="glass-card" data-aos="fade-up" data-aos-duration="900" data-aos-delay="120">
+        <!-- Text blocks -->
+        <div class="lead-block">
+          <p class="ptext">
+            We are pleased to announce that the “113th DAE BRNS – IANCAS National Workshop &amp; Outreach Program” on
+            “Nuclear Sciences and Applications of Radioisotopes” is scheduled to be held at Netaji Subhas University of
+            Technology (NSUT), New Delhi, from 02 – 06 February, 2026. All resource persons are esteemed scientists from
+            Bhabha Atomic Research Centre (BARC) and they will deliver the lecture sessions and hands-on laboratory experiments at NSUT.
+          </p>
+          <div style="height:12px"></div>
+          <p class="ptext">
+            The event will bring together students, research scholars, faculty, academicians, and industry professionals from institutions nationwide,
+            providing a platform for interaction that fosters innovation, research collaboration, and industry–academia engagement.
+          </p>
+          <div style="height:12px"></div>
+          <p class="ptext">
+            In this regard, we would like to invite you as a sponsor for this workshop.
+          </p>
+        </div>
+
+        <!-- Categories -->
+        <div class="mt-4">
+          <span class="section-chip"><i class="fa-solid fa-layer-group"></i> Categories of Sponsorship</span>
+        </div>
+
+        <div class="row g-3 mt-2">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-duration="900">
+            <div class="tier">
+              <div class="tier-title"><i class="fa-solid fa-award"></i> Bronze Sponsors (Rs 20,000)</div>
+              <ul>
+                <li>Logos will be displayed on banners and posters</li>
+                <li>Digital Promotions</li>
+                <li>Offer one registration to the company representative with food Coupons</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-duration="900" data-aos-delay="80">
+            <div class="tier">
+              <div class="tier-title"><i class="fa-solid fa-award"></i> Silver Sponsors (Rs 30,000)</div>
+              <ul>
+                <li>Logos will be displayed on banners and posters</li>
+                <li>Digital promotions</li>
+                <li>Stall Space during workshop</li>
+                <li>Two registrations to the company representative with food coupons</li>
+                <li>5 minutes interaction with participants for product promotion.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-duration="900" data-aos-delay="160">
+            <div class="tier">
+              <div class="tier-title"><i class="fa-solid fa-award"></i> Gold Sponsors (Rs 40,000)</div>
+              <ul>
+                <li>Logos will be displayed on banners and posters</li>
+                <li>Digital promotions</li>
+                <li>Stall Space during workshop</li>
+                <li>Three registrations to the company representative with food coupons.</li>
+                <li>Provide 10 minutes participants interaction for company promotion</li>
+                <li>Special thanks during Valedictory session.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="row g-3 mt-3">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-duration="900">
+            <div class="contact-card">
+              <div class="contact-title">Contact with</div>
+              <div class="contact-line">Dr. Pargin Bangotra, Convener NSAR - 2026</div>
+              <div class="contact-line">Assistant Professor, Department of Physics</div>
+              <div class="contact-line">Netaji Subhas University of Technology, Delhi, India.</div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-duration="900" data-aos-delay="80">
+            <div class="contact-card">
+              <div class="contact-title">mail:</div>
+              <div class="contact-line">
+                <a class="contact-link" href="mailto:pargin.bangotra@nsut.ac.in">pargin.bangotra@nsut.ac.in</a>,
+                <a class="contact-link" href="mailto:parginkumar@gmail.com">parginkumar@gmail.com</a>,
+                <br>
+                <b>phone:</b>
+                <a class="contact-link" href="tel:+919815977169">+919815977169</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container d-flex justify-content-between align-items-center gap-3">
+      <div style="color:rgba(6,18,43,.80); font-weight:800;">
+        Venue : NSUT (Main Campus), Sector-3 Dwarka, New Delhi-110078
+      </div>
+      <button class="to-top" id="toTop" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ once:true, offset: 80, duration: 900 });
+    document.getElementById("toTop").addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>

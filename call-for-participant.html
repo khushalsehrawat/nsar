@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Call for Participant • NSAR Workshop 2026</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+
+  <!-- AOS animation -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#06122b;
+      --muted:#4b5b7a;
+      --muted2:#6b7a97;
+
+      --stroke: rgba(10, 45, 100, .10);
+      --shadow: 0 18px 45px rgba(10, 45, 100, .12);
+
+      --sky1:#e7f7ff;
+      --sky2:#f7fbff;
+
+      --accent:#38bdf8;
+      --accent2:#60a5fa;
+      --accent3:#9ae6ff;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 700px at 15% -10%, rgba(56,189,248,.35), transparent 60%),
+        radial-gradient(1000px 650px at 85% 0%, rgba(96,165,250,.25), transparent 60%),
+        linear-gradient(180deg, var(--sky1), var(--sky2));
+      min-height:100vh;
+    }
+
+    /* NAVBAR */
+    .nav-glass{
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .navbar-brand{
+      font-weight: 800;
+      letter-spacing: -.02em;
+      color: var(--ink) !important;
+    }
+    .brand-dot{
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, var(--accent3), var(--accent2));
+      box-shadow: 0 0 0 8px rgba(56,189,248,.14);
+      display:inline-block;
+      margin-right:10px;
+    }
+    .navbar .nav-link{
+      color: rgba(6,18,43,.78) !important;
+      border-radius: 999px;
+      padding: .55rem .85rem !important;
+      transition: all .18s ease;
+      font-weight: 700;
+    }
+    .navbar .nav-link:hover{
+      background: rgba(56,189,248,.10);
+      color: rgba(6,18,43,.95) !important;
+      transform: translateY(-1px);
+    }
+    .navbar .nav-link.active{
+      background: rgba(56,189,248,.12);
+      border: 1px solid rgba(56,189,248,.20);
+      color: rgba(6,18,43,.95) !important;
+    }
+
+    /* PAGE */
+    .page-wrap{ padding-top: 92px; padding-bottom: 56px; }
+    .page-hero{
+      border-radius: 22px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.84);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      position: relative;
+      overflow:hidden;
+    }
+    .page-hero::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(900px 360px at 15% 5%, rgba(154,230,255,.35), transparent 62%),
+        radial-gradient(800px 320px at 95% 0%, rgba(96,165,250,.22), transparent 60%);
+      filter: blur(18px);
+      opacity: .75;
+      pointer-events:none;
+    }
+    .page-hero > *{ position:relative; z-index:1; }
+
+    .kicker{
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      font-size: .90rem;
+      color: var(--muted2);
+      font-weight: 800;
+    }
+    .page-title{
+      font-weight: 950;
+      letter-spacing: -.03em;
+      font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+      margin: .35rem 0 .25rem;
+      background: linear-gradient(90deg, #06204a, #0c4a6e, #075985);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .venue-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-top: 10px;
+      padding: .55rem .90rem;
+      border-radius: 999px;
+      background: rgba(56,189,248,.10);
+      border: 1px solid rgba(56,189,248,.20);
+      color: rgba(6,18,43,.88);
+      font-weight: 800;
+      font-size: .95rem;
+    }
+
+    /* CONTENT CARD */
+    .glass-card{
+      margin-top: 18px;
+      border-radius: 22px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.90);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .item{
+      display:flex;
+      gap: 12px;
+      align-items:flex-start;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(10,45,100,.08);
+      background: rgba(255,255,255,.94);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .item:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 14px 26px rgba(10,45,100,.10);
+    }
+
+
+    /* Fix text overflow inside flex cards */
+.item > div:last-child {
+  min-width: 0;           /* CRITICAL for flexbox wrapping */
+}
+
+/* Ensure long text wraps */
+.d {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+    .ic{
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: rgba(56,189,248,.14);
+      border: 1px solid rgba(56,189,248,.20);
+      color: rgba(6,18,43,.92);
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+    .t{
+      font-weight: 900;
+      color: rgba(6,18,43,.92);
+      margin-bottom: 4px;
+    }
+    .d{
+      color: rgba(6,18,43,.78);
+      line-height: 1.7;
+      font-weight: 600;
+    }
+
+    .link-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: .55rem .90rem;
+      border-radius: 999px;
+      background: rgba(56,189,248,.12);
+      border: 1px solid rgba(56,189,248,.20);
+      color: rgba(6,18,43,.92);
+      font-weight: 900;
+      text-decoration:none;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .link-chip:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(10,45,100,.12);
+    }
+
+    /* FOOTER */
+    footer{
+      border-top: 1px solid var(--stroke);
+      background: rgba(255,255,255,.70);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 18px 0 22px;
+    }
+    .to-top{
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      border: 1px solid rgba(10,45,100,.14);
+      background: rgba(255,255,255,.92);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: rgba(6,18,43,.92);
+      font-weight: 900;
+      transition: transform .18s ease;
+    }
+    .to-top:hover{ transform: translateY(-2px); }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg nav-glass fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="brand-dot"></span> NSAR Workshop 2026
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="local-advisory.html">Local Advisory</a></li>
+          <li class="nav-item"><a class="nav-link active" href="call-for-participant.html">Call for Participant</a></li>
+          <li class="nav-item"><a class="nav-link" href="scientific-programme.html">Scientific Programme</a></li>
+          <li class="nav-item"><a class="nav-link" href="programme-details.html">Programe Details</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact Us</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="sponsorship-details.html">Sponsorship Details</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    <div class="container">
+
+      <!-- Header -->
+      <section class="page-hero" data-aos="fade-up" data-aos-duration="900">
+        <div class="kicker">NSAR Workshop 2026</div>
+        <h1 class="page-title">Call for Participation</h1>
+        <div class="venue-pill">
+          <i class="fa-solid fa-location-dot"></i>
+          Venue : NSUT (Main Campus), Sector-3 Dwarka, New Delhi-110078
+        </div>
+      </section>
+
+      <!-- Content -->
+      <section class="glass-card" data-aos="fade-up" data-aos-duration="900" data-aos-delay="120">
+        <div class="row g-3">
+
+          <div class="col-12">
+            <div class="item">
+              <div class="ic"><i class="fa-solid fa-file-lines"></i></div>
+              <div>
+                <div class="t">Applications</div>
+                <div class="d">
+                  Applications are invited from research scholars/post-docs,
+                  M.Sc./M.Tech/B.Tech students, faculties/scientists, industry/
+                  corporate persons, working in the relevant areas like Physics,
+                  Chemistry, Biotechnology, Health and Pharmaceutical Sciences,
+                  Engineering Sciences and Nuclear Sciences through the Google form
+                  (https://forms.gle/QMzL9HUxH8NyUKub7). Participants may
+                  proceed with payment once they receive a confirmation mail, which
+                  will be sent after submitting the Google form.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="item">
+              <div class="ic"><i class="fa-solid fa-users"></i></div>
+              <div>
+                <div class="t">Maximum number of participants</div>
+                <div class="d">60 (First come first serve basis).</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="item">
+              <div class="ic"><i class="fa-solid fa-calendar-check"></i></div>
+              <div>
+                <div class="t">Last date for registration</div>
+                <div class="d">10 January, 2026</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="item">
+              <div class="ic"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+              <div>
+                <div class="t">Registration fees details</div>
+                <div class="d">
+                  Research Scholars/Students: ₹ 2000/-<br/>
+                  Faculties/Scientists/Post-doc: ₹ 2500/-<br/>
+                  Industrial/ Corporate personnel: ₹ 3000/-
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="item">
+              <div class="ic"><i class="fa-solid fa-mug-hot"></i></div>
+              <div>
+                <div class="t">Registration fee will include</div>
+                <div class="d">registration kit, lunch, tea/coffee during sessions.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="item">
+              <div class="ic"><i class="fa-solid fa-hotel"></i></div>
+              <div>
+                <div class="t">Accommodation</div>
+                <div class="d">No accommodation will be provided to the participants.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 mt-2">
+            <a class="link-chip" href="https://forms.gle/QMzL9HUxH8NyUKub7" target="_blank" rel="noreferrer">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              https://forms.gle/QMzL9HUxH8NyUKub7
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container d-flex justify-content-between align-items-center gap-3">
+      <div style="color:rgba(6,18,43,.80); font-weight:800;">
+        For any query, contact: nsarworkshop2026@gmail.com
+      </div>
+      <button class="to-top" id="toTop" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ once:true, offset: 80, duration: 900 });
+
+    document.getElementById("toTop").addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
